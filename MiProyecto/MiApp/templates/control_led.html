@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de LED</title>
+</head>
+<body>
+
+<h1>Control de LED</h1>
+<p>Estado del LED: {% if led_status %}Encendido{% else %}Apagado{% endif%}</p>
+<form method="post" action="{% url 'control_led' %}">
+    {% csrf_token %}
+    <button type="submit">Encender/Apagar</button>
+</form>
+
+</body>
+</html>
